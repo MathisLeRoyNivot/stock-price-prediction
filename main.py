@@ -5,7 +5,7 @@ from fbprophet import Prophet
 from fbprophet.plot import plot_plotly
 from plotly import graph_objs as go
 
-START_DATE = "2015-01-01"
+START_DATE = "2011-01-01"
 TODAY_DATE = date.today().strftime("%Y-%m-%d")
 
 st.title("Stock Price Prediction App")
@@ -13,7 +13,7 @@ st.title("Stock Price Prediction App")
 stocks = ("BTC-USD", "AAPL", "FB", "MSFT", "GOOG", "TSLA")
 selected_stocks = st.selectbox("Select stock for prediction", stocks)
 
-n_year = st.slider("Years of prediction:", 1, 4)
+n_year = st.slider("Years of prediction", 1, 5)
 period = n_year * 365
 
 
@@ -29,7 +29,7 @@ data_load_state = st.text("Load stock data...")
 data = load_stock_data(selected_stocks)
 data_load_state.text("Stock data loaded!")
 
-st.subheader("Raw data")
+st.subheader("Raw stock data")
 st.write(data.tail())
 
 
