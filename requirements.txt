@@ -1,0 +1,5 @@
+streamlit
+pystan==2.19.1.1
+fbprophet
+yfinance
+plotly==5.3.1
